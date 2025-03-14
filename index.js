@@ -1,11 +1,13 @@
 //npm install express 
  //npm install joi - to validate request data 
-
+// npm install cors - CORS (Cross-Origin Resource Sharing) is a security mechanism that restricts web applications from making requests to a different domain.
 const express = require("express");
 const Joi = require("joi");
+const cors = require("cors");
 
 const app = express();
 app.use(express.json()); // Middleware to parse JSON
+app.use(cors());
 
 const PORT = 5000;
 
@@ -44,5 +46,10 @@ app.post("/register", (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
-//npm install express
+
+
+app.get("/", (req, res) => {
+    res.send("CORS is enabled!");
+});
+
 
