@@ -48,8 +48,8 @@ app.listen(PORT, () => {
 });
 
 
-app.get("/", (req, res) => {
+// app.get("/", (req, res) => {
     res.send("CORS is enabled!");
-});
+//});
 
 
